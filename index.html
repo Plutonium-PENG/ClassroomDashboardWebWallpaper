@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>班级仪表板</title>
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="./jQueryEasing-1.3.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="LoadingContainer">
+		<div id="Header">正在载入</div>
+		<div id="LoadingProgressBar"></div>
+		<div id="LoadingProgressNumber">0%</div>
+		<div id="LoadingStatusFatherContainer">
+			<div id="LoadingStatusContainer">
+				<div id="StatusPreparingContainer" class="StatusContainer">
+					<div id="StatusPreparingContainer_Title" class="ItemTitle">正在准备</div>
+				</div>
+				<div id="StatusReadingConfigurationContainer" class="StatusContainer">
+					<div id="StatusReadingConfigurationContainer_Title" class="ItemTitle">读取配置文件</div>
+					<div id="StatusReadingConfigurationContainer_Message" class="ItemMessage">发生错误，无法获取配置文件(config.json)。请检查您的网络连接和配置文件格式，然后重试。</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div id="WallpaperContainer">
+		<div id="MainBackground"></div>
+		<div id="SubBackground"></div>
+		<div id="Context">
+
+			<div id="CurrentTimeContainer">
+				<div id="CurrentTime"></div>
+			</div>
+
+			<div id="ButtonsContainer">
+				<button id="Reload"></button>
+				<button id="Info"></button>
+			</div>
+
+			<div id="ProgressContainer">
+				<div id="CurrentState">没有定义</div>
+				<div id="ProgressBar"></div>
+				<div id="RemainingTime">0</div>
+			</div>
+
+			<div id="OtherInfoContainer">
+				<div id="NextHolidayContainer">
+					<div id="NextHolidayTitle">下一个假期</div>
+					<div id="NextHolidayName">没有定义</div>
+					<div id="NextHolidayRemainingTime">--</div>
+				</div>
+<!--
+				<div id="WeatherContainer">
+
+				</div>
+-->
+			</div>
+
+			<div id="EventsContainer">
+				<div id="Event_1_Container" class="EventsContainers">
+					<div class="Block"></div>
+					<div id="Event_1_Name" class="EventNames"></div>
+					<div id="Event_1_RemainingTime" class="EventRemainingTimes"></div>
+				</div>
+
+				<div id="Event_2_Container" class="EventsContainers">
+					<div class="Block"></div>
+					<div id="Event_2_Name" class="EventNames"></div>
+					<div id="Event_2_RemainingTime" class="EventRemainingTimes"></div>
+				</div>
+
+				<div id="Event_3_Container" class="EventsContainers">
+					<div class="Block"></div>
+					<div id="Event_3_Name" class="EventNames"></div>
+					<div id="Event_3_RemainingTime" class="EventRemainingTimes"></div>
+				</div>
+
+				<div id="Event_4_Container" class="EventsContainers">
+					<div class="Block"></div>
+					<div id="Event_4_Name" class="EventNames"></div>
+					<div id="Event_4_RemainingTime" class="EventRemainingTimes"></div>
+				</div>
+
+				<div id="Event_5_Container" class="EventsContainers">
+					<div class="Block"></div>
+					<div id="Event_5_Name" class="EventNames"></div>
+					<div id="Event_5_RemainingTime" class="EventRemainingTimes"></div>
+				</div>
+
+			</div>
+
+			<div id="BannerContainer">
+				<div id="BannerBlock"></div>
+				<div id="Banner"></div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

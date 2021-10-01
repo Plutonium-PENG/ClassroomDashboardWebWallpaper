@@ -1,0 +1,27 @@
+@font-face
+{
+    font-family: "msyh";
+    src: url(./fonts/msyh.ttf) format('truetype');
+}
+
+body
+{
+    background:#0F0F0F;
+}
+
+#Back
+{
+    background:#00FFFFEE;
+    border: 0px;
+    border-radius: 5px; 
+    width: 64px; 
+    height: 64px; 
+    font-size: 32px;
+    color: #0F0F0F;
+}
+
+#Back:hover
+{
+    background: #00FFFFFF;
+}
+

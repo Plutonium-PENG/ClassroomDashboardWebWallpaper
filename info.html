@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>关于班级仪表板</title>
+    <link rel="stylesheet" type="text/css" href="info_style.css">
+	<script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+	<button id="Back">&#60;</button>
+	<h2 style="color:#fff;">配置文件(config.json)使用说明</h2>
+	<h3 style="color:#fff;">配置文件是此工具的核心。在开始之前，您需要稍微了解一下json文件的格式和语法。</h3>	
+	<div style="color:#fff;">1.json文件由一对花括号包住的内容称为“对象”，由方括号包住的内容成为“数组”。</div>
+	<div style="color:#fff;">2.“键名”写在开头，由英文(半角)引号引用，表明一项数据的名称。键名已由开发者定义，用于表明可供用户配置项的名称，请勿修改，否则将使壁纸工作出现异常。</div>
+	<div style="color:#fff;">3.“键名”及冒号后是“键值”。键值可由用户修改，用于变更壁纸的工作行为,但您必须填入有效值。</div>
+	<div style="color:#fff;">3.1.类型为“数字”的配置项，您需在冒号后直接填入一个有效的数字，不需要使用引号，同时也请阅读下面的说明以便以正确的单位进行配置。</div>
+	<div style="color:#fff;">3.2.类型为“逻辑值”的配置项，您只能在冒号后直接填入“true”或“false”，不需要使用引号。这类设置项通常表示开关，true表示打开，false表示关闭。填入其他无效内容将使开关默认设置为“开”状态。</div>
+	<div style="color:#ffffff;">3.3.类型为“字符串”的配置项，您需在冒号后填入您欲定义的字符串，并使用英文引号将您的内容引用。若您的文本中需要使用引号，为避免程序出错，请使用中文(全角)引号。</div>
+	<div style="color:#fff;">4.“数组”内的配置项不需要定义键名。但它们的顺序的不同可能会改变壁纸的工作行为。</div>
+	<div style="color:#fff;">5.第0项(即首项)至第n-1项配置项，每项之间需用英文逗号隔开，第n项(最后一项)后面不能使用逗号。</div>
+
+	<h3 style="color:#fff;">下面将向您介绍每个配置项的作用及其用法。</h3>
+	<div style="color:#fff;">1.ImagePath。作用：指定壁纸图片存放路径。类型：字符串。默认值：./background。</div>
+	<div style="color:#fff;">2.ImagesRefreshPeriod。作用：指定壁纸图片刷新周期。类型：数字（秒）。默认值：300。</div>
+	<div style="color:#fff;">3.BannersRefreshPeriod。作用：指定壁纸图片刷新周期。类型：数字（秒）。默认值：120。</div>
+	<div style="color:#fff;">4.HideExpiredHolidayEventsAfter。作用：指定事件/假期在过期多久后隐藏。类型：数字（秒）。默认值：86400。</div>
+	<div style="color:#fff;">5.IsHolidayAvailable。作用：指定是否启用假期倒计时。若关闭此项，则“NextHoliday”项下的全部设置都无效。类型：布尔值。默认值：true。</div>
+	<div style="color:#fff;">6.IsBannersAvailable。作用：指定是否启用底部横幅。若关闭此项，则“Banners”项下的全部设置都无效。类型：布尔值。默认值：true。</div>
+	<div style="color:#fff;">7.Events。作用：指定每个倒计时钟的名称和到期时间。类型：数组。请参考配置文件中提供的默认模板来配置。最多支持5个倒计时钟，为数组添加元素的操作将无效。还请注意使用半角标点，日期和时间之间需要有一个空格。</div>
+	<div style="color:#fff;">8.NextHoliday。作用：指定下一个假期的名称和到期时间。类型：数组。请参考配置文件中提供的默认模板来配置。最多支持1个倒计时钟，为数组添加元素的操作将无效。</div>
+	<div style="color:#fff;">9.Schedules。作用：指定一周内每天的的时间表。类型：数组。请参考配置文件中提供的默认模板来配置。此模板是茂名一中的作息时间表。您可以自由修改或添加元素。只需要写入时间点即可。每天末尾的“/”是占位符，请勿删除，否则将导致您定义的最后一个时间节点不能正常显示。</div>
+	<div style="color:#fff;">10.Lessons。作用：指定一周内每天的的状态（主要是课程）。类型：数组。此配置项的顺序与Schedules项内的对应天的顺序一一对应。请参考配置文件中提供的默认模板来配置。您可以自由添加元素。引号内的文本将完全显示。</div>
+
+	<h2 style="color:#fff;">关于</h2>
+	<h1 style="color:#fff;">班级仪表板   Class Counting Down Wallpaper</h1>
+	<a style="color:#fff;">这是一款让你永远铭记高中内卷时光的电脑桌面壁纸。强烈建议在班级电教平台使用。使用须遵守 CC BY-NC 4.0许可协议。</a>
+	<div style="color:#fff;">此壁纸的UI及后台代码由 Plutonium. 倾情奉献。</div>
+	<div style="color:#fff;">版本：2.0；更新日期：2021/8/1</div>
+	<div style="color:#fff;">更新内容：1、重新设计了UI；2、优化了壁纸的运行性能，增强了工作稳定性。3、修复了随机切换壁纸时所生成的随机数超出索引的bug。</div>
+
+</body>
+<script>
+	$(function(){
+		$("#Back").click(function(){
+			history.go(-1);
+		});
+	});
+</script>
+</html>
